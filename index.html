@@ -1,0 +1,411 @@
+<!-- Ini adalah komentar -->
+Nama: Alfin Oktavian NIM : 240401010282 Kelas : IF201 Mata Kuliah : Pemrograman
+Web I
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Kami</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">
+        <img src="image/TokoKu.png" alt="Logo TokoKu" class="logo-icon" />
+        <span>Toko<span style="color: #4447f5">Kami</span></span>
+      </a>
+
+      <audio
+        id="click-sound"
+        src="audio/notification.wav"
+        preload="auto"
+      ></audio>
+
+      <!-- Search Bar -->
+      <div id="search-bar" style="display: none">
+        <input
+          type="text"
+          id="searh-input"
+          placeholder="Cari Produk..."
+          style="
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          "
+        />
+      </div>
+      <div class="navbar-nav">
+        <a href="#">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#contact">Kontak</a>
+        <a href="#promotion">Promo</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <!-- Search Bar -->
+        <div id="search-bar" style="display: none">
+          <input
+            type="text"
+            id="searh-input"
+            placeholder="Cari Produk..."
+            style="
+              padding: 8px;
+              width: 300px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+        </div>
+        <div class="shopping-cart-container" style="position: relative">
+          <a href="#" id="shopping-cart">
+            <i data-feather="shopping-cart"></i>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </a>
+          <div class="cart-dropdown" id="cart-dropdown">
+            <h4>Keranjang</h4>
+            <ul id="cart-items-dropdown"></ul>
+            <p>Total: Rp <span id="cart-total">0</span></p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="search-bar" style="display: none; padding: 1rem">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Cari produk..."
+        style="width: 100%; padding: 0.5rem; font-size: 1rem"
+      />
+    </div>
+
+    <!-- Baner -->
+    <section class="promo-banner">
+      <div class="banner-container">
+        <div class="banner-text">
+          <h2>Yuk, belanja di <span>TokoKami</span></h2>
+          <p>Cek barang dari beragam kategori</p>
+          <p>
+            <strong>Diskon besar-besaran</strong> untuk pelanggan pertama!
+            Jangan lewatkan <em>kesempatan emas</em> ini. Promo
+            <u>waktu terbatas</u>.
+          </p>
+          <a href="#" class="btn-cek">Cek Sekarang</a>
+        </div>
+        <div class="banner-image">
+          <img src="image/shopping.png" alt="Banner TokoKami" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Produk -->
+    <section class="produk">
+      <div class="produk-card">
+        <img
+          src="image/mesincuci.png"
+          alt="Produk Mesin Cuci"
+          class="produk-img"
+        />
+        <h3 class="produk-nama">Mesin Cuci</h3>
+        <p class="produk-harga">Rp.4.000.000</p>
+        <button class="btn-keranjang">Tambah ke Keranjang</button>
+      </div>
+
+      <div class="produk-card">
+        <img src="image/smart-tv.png" alt="Smart TV" class="produk-img" />
+        <h3 class="produk-nama">Smart TV 32 inch</h3>
+        <p class="produk-harga">Rp.1.000.000</p>
+        <button class="btn-keranjang">Tambah ke Keranjang</button>
+      </div>
+
+      <div class="produk-card">
+        <img src="image/kulkas.png" alt="Lemari Es" class="produk-img" />
+        <h3 class="produk-nama">Kulkas 2 Pintu</h3>
+        <p class="produk-harga">Rp.2.700.000</p>
+        <button class="btn-keranjang">Tambah ke Keranjang</button>
+      </div>
+
+      <div class="produk-card">
+        <img src="image/iphone.png" alt="Handphone" class="produk-img" />
+        <h3 class="produk-nama">Iphone 13 Pro</h3>
+        <p class="produk-harga">Rp.8.700.000</p>
+        <button class="btn-keranjang">Tambah ke Keranjang</button>
+      </div>
+
+      <div class="produk-card">
+        <img src="image/JBL-GO.png" alt="Speaker" class="produk-img" />
+        <h3 class="produk-nama">JBL Speaker</h3>
+        <p class="produk-harga">Rp.3.900.000</p>
+        <button class="btn-keranjang">Tambah ke Keranjang</button>
+      </div>
+    </section>
+
+    <!-- Home -->
+    <section id="home" style="padding: 1rem 7%; background-color: #f7f7f7">
+      <h2>Selamat Datang di TokoKami</h2>
+      <p>
+        Kami menyediakan berbagai produk elektronik berkualitas tinggi dengan
+        harga terjangkau.
+      </p>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="about" style="padding: 1rem 7%">
+      <h2>Tentang Kami</h2>
+      <p>
+        TokoKami adalah e-commerce yang menyediakan produk elektronik rumah
+        tangga seperti TV, kulkas, mesin cuci, dan gadget dengan layanan
+        pengiriman ke seluruh Indonesia.
+      </p>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" style="padding: 1rem 7%; background-color: #f7f7f7">
+      <h2>Kontak Kami</h2>
+      <form>
+        <label for="nama">Nama:</label><br />
+        <input type="text" id="nama" name="nama" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="pesan">Pesan:</label><br />
+        <textarea id="pesan" name="pesan" rows="4" required></textarea><br />
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+
+    <!-- Promo -->
+    <section
+      id="video-promo"
+      style="padding: 1rem 7%; background-color: #f7f7f7"
+    >
+      <h2>Video Promo TokoKami</h2>
+      <video width="100%" controls>
+        <source src="video/promo.mp4" type="video/mp4" />
+        Browser Anda tidak mendukung video.
+      </video>
+    </section>
+
+    <section id="daftar-produk" style="padding: 0.5rem 7%">
+      <h2>Daftar Produk Populer</h2>
+      <table class="produk-table">
+        <thead>
+          <tr>
+            <th>Nama Produk</th>
+            <th>Harga</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Smart TV</td>
+            <td>Rp.1.000.000</td>
+            <td>12</td>
+          </tr>
+
+          <tr>
+            <td>Kulkas 2 Pintu</td>
+            <td>Rp.2.700.000</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Mesin Cuci</td>
+            <td>Rp.4.000.000</td>
+            <td>12</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Keranjang -->
+    <section id="keranjang" style="padding: 1rem 7%">
+      <h2>Keranjang Belanja</h2>
+      <ul id="daftar-keranjang"></ul>
+      <p>Total: Rp <span id="total-belanja">0</span></p>
+      <button id="hapus-semua" style="margin-top: 10px">Hapus Semua</button>
+    </section>
+
+    <!-- Script -->
+    <!-- PASTIKAN DITARUH SEBELUM </body> -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        feather.replace();
+
+        const keranjang = [];
+        const daftarKeranjang = document.getElementById("daftar-keranjang");
+        const totalBelanja = document.getElementById("total-belanja");
+
+        const cartItems = document.getElementById("cart-items-dropdown");
+        const cartTotal = document.getElementById("cart-total");
+        const cartBadge = document.getElementById("cart-badge");
+        const cartDropdown = document.getElementById("cart-dropdown");
+
+        const searchButton = document.getElementById("search");
+        const searchBar = document.getElementById("search-bar");
+        const searchInput = document.getElementById("search-input");
+
+        const tombolKeranjang = document.querySelectorAll(".btn-keranjang");
+        const clickSound = document.getElementById("click-sound");
+
+        // === Tambah ke Keranjang ===
+        tombolKeranjang.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const produkcard = btn.closest(".produk-card");
+            const nama = produkcard.querySelector(".produk-nama").textContent;
+            const hargaText =
+              produkcard.querySelector(".produk-harga").textContent;
+            const harga = parseInt(hargaText.replace(/\D/g, ""));
+
+            keranjang.push({ nama, harga });
+
+            if (clickSound) {
+              clickSound.currentTime = 0;
+              clickSound
+                .play()
+                .catch((e) => console.log("Audio gagal diputar", e));
+            }
+
+            renderKeranjang();
+            renderCartDropdown();
+            updateCartBadge();
+          });
+        });
+
+        // === Render Keranjang Utama ===
+        function renderKeranjang() {
+          daftarKeranjang.innerHTML = "";
+          let total = 0;
+
+          keranjang.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+          ${item.nama} - Rp ${item.harga.toLocaleString()}
+          <button class="hapus-item" data-index="${index}" style="color:red; margin-left:10px;">❌</button>
+        `;
+            daftarKeranjang.appendChild(li);
+            total += item.harga;
+          });
+
+          totalBelanja.textContent = total.toLocaleString();
+
+          // === Hapus item satuan
+          document.querySelectorAll(".hapus-item").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const index = e.target.getAttribute("data-index");
+              keranjang.splice(index, 1);
+              renderKeranjang();
+              renderCartDropdown();
+              updateCartBadge();
+            });
+          });
+        }
+
+        // === Render dropdown keranjang
+        function renderCartDropdown() {
+          cartItems.innerHTML = "";
+          let total = 0;
+          keranjang.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.nama} - Rp ${item.harga.toLocaleString()}`;
+            cartItems.appendChild(li);
+            total += item.harga;
+          });
+          cartTotal.textContent = total.toLocaleString();
+        }
+
+        // === Update badge jumlah item
+        function updateCartBadge() {
+          if (keranjang.length > 0) {
+            cartBadge.textContent = keranjang.length;
+            cartBadge.style.display = "inline-block";
+          } else {
+            cartBadge.style.display = "none";
+          }
+        }
+
+        // === Hapus Semua
+        const btnHapusSemua = document.getElementById("hapus-semua");
+        if (btnHapusSemua) {
+          btnHapusSemua.addEventListener("click", () => {
+            keranjang.length = 0;
+            renderKeranjang();
+            renderCartDropdown();
+            updateCartBadge();
+          });
+        }
+
+        // === Toggle dropdown keranjang
+        const cartIcon = document.getElementById("shopping-cart");
+        if (cartIcon) {
+          cartIcon.addEventListener("click", (e) => {
+            e.preventDefault();
+            cartDropdown.style.display =
+              cartDropdown.style.display === "block" ? "none" : "block";
+          });
+        }
+
+        // === Toggle Search
+        if (searchButton && searchBar) {
+          searchButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            searchBar.style.display =
+              searchBar.style.display === "block" ? "none" : "block";
+            searchInput.focus();
+          });
+        }
+
+        // === Fungsi Pencarian Produk
+        function jalankanPencarian() {
+          const keyword = searchInput.value.toLowerCase();
+          const produkCards = document.querySelectorAll(".produk-card");
+
+          produkCards.forEach((card) => {
+            const namaProduk = card
+              .querySelector(".produk-nama")
+              .textContent.toLowerCase();
+            card.style.display = namaProduk.includes(keyword)
+              ? "block"
+              : "none";
+          });
+        }
+
+        // Jalankan pencarian saat ENTER
+        if (searchInput) {
+          searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              jalankanPencarian();
+            }
+          });
+
+          searchInput.addEventListener("input", () => {
+            if (searchInput.value.trim() === "") {
+              document.querySelectorAll(".produk-card").forEach((card) => {
+                card.style.display = "block";
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
