@@ -56,7 +56,7 @@ Web I
         <a href="#">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#contact">Kontak</a>
-        <a href="#promotion">Promo</a>
+        <a href="#video-promo">Promo</a>
       </div>
 
       <div class="navbar-extra">
@@ -382,9 +382,11 @@ Web I
             const namaProduk = card
               .querySelector(".produk-nama")
               .textContent.toLowerCase();
-            card.style.display = namaProduk.includes(keyword)
-              ? "block"
-              : "none";
+            if (namaProduk.includes(keyword)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
           });
         }
 
