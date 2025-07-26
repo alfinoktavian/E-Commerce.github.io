@@ -1,10 +1,8 @@
-<!-- 
-Nama: Alfin Oktavian NIM : 240401010282 Kelas : IF201 Mata Kuliah : Pemrograman
-Web I
+<!--
+Nama: Alfin Oktavian NIM : 240401010282 Kelas : IF201 Mata Kuliah : Pemrograman Web I
 -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +25,7 @@ Web I
   </head>
   <body>
     <!-- Navbar start -->
-    <nav class="navbar">
+    <nav class="navbar" style="height: 90px">
       <a href="#" class="navbar-logo">
         <img src="image/TokoKu.png" alt="Logo TokoKu" class="logo-icon" />
         <span>Toko<span style="color: #4447f5">Kami</span></span>
@@ -43,7 +41,7 @@ Web I
       <div id="search-bar" style="display: none">
         <input
           type="text"
-          id="searh-input"
+          id="search-input"
           placeholder="Cari Produk..."
           style="
             padding: 8px;
@@ -54,34 +52,35 @@ Web I
         />
       </div>
       <div class="navbar-nav">
-        <a href="#">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#contact">Kontak</a>
-        <a href="#video-promo">Promo</a>
+        <a href="#" style="color: var(--primary)">Home</a>
+        <a href="#about" style="color: var(--primary)">Tentang Kami</a>
+        <a href="#contact" style="color: var(--primary)">Kontak</a>
+        <a href="#video-promo" style="color: var(--primary)">Promo</a>
       </div>
 
-      <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
-        <!-- Search Bar -->
-        <div id="search-bar" style="display: none">
-          <input
-            type="text"
-            id="searh-input"
-            placeholder="Cari Produk..."
-            style="
-              padding: 8px;
-              width: 300px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-            "
-          />
-        </div>
-        <div class="shopping-cart-container" style="position: relative">
-          <a href="#" id="shopping-cart">
+      <div
+        class="navbar-extra"
+        style="display: flex; align-items: center; gap: 1rem"
+      >
+        <a href="#" id="search-btn" aria-label="Search"
+          ><i data-feather="search"></i
+        ></a>
+        <a href="#" id="hamburger-menu" aria-label="Menu"
+          ><i data-feather="menu"></i
+        ></a>
+        <div
+          class="shopping-cart-container"
+          style="position: relative; display: inline-block"
+        >
+          <a href="#" id="shopping-cart" aria-label="Shopping Cart">
             <i data-feather="shopping-cart"></i>
-            <span id="cart-badge" class="cart-badge">0</span>
           </a>
-          <div class="cart-dropdown" id="cart-dropdown">
+          <span id="cart-badge" class="cart-badge">0</span>
+          <div
+            class="cart-dropdown"
+            id="cart-dropdown"
+            style="position: absolute; top: 40px; right: 0"
+          >
             <h4>Keranjang</h4>
             <ul id="cart-items-dropdown"></ul>
             <p>Total: Rp <span id="cart-total">0</span></p>
@@ -90,17 +89,8 @@ Web I
       </div>
     </nav>
 
-    <div id="search-bar" style="display: none; padding: 1rem">
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Cari produk..."
-        style="width: 100%; padding: 0.5rem; font-size: 1rem"
-      />
-    </div>
-
-    <!-- Baner -->
-    <section class="promo-banner">
+    <!-- Banner -->
+    <section class="promo-banner" style="margin-top: 100px">
       <div class="banner-container">
         <div class="banner-text">
           <h2>Yuk, belanja di <span>TokoKami</span></h2>
@@ -110,7 +100,7 @@ Web I
             Jangan lewatkan <em>kesempatan emas</em> ini. Promo
             <u>waktu terbatas</u>.
           </p>
-          <a href="#" class="btn-cek">Cek Sekarang</a>
+          <a href="#produk" class="btn-cek">Cek Sekarang</a>
         </div>
         <div class="banner-image">
           <img src="image/shopping.png" alt="Banner TokoKami" />
@@ -119,16 +109,27 @@ Web I
     </section>
 
     <!-- Produk -->
-    <section class="produk">
+    <section id="produk" class="produk">
       <div class="produk-card">
         <img
           src="image/mesincuci.png"
           alt="Produk Mesin Cuci"
           class="produk-img"
+          style="height: 160px; object-fit: contain"
         />
         <h3 class="produk-nama">Mesin Cuci</h3>
-        <p class="produk-harga">Rp.4.000.000</p>
-        <button class="btn-keranjang">Tambah ke Keranjang</button>
+        <p
+          class="produk-harga"
+          style="color: var(--primary); font-weight: bold"
+        >
+          Rp.4.000.000
+        </p>
+        <button
+          class="btn-keranjang"
+          style="background-color: var(--primary); color: white"
+        >
+          Tambah ke Keranjang
+        </button>
       </div>
 
       <div class="produk-card">
@@ -169,6 +170,16 @@ Web I
       </p>
     </section>
 
+    <section id="Keunggulan" style="padding: 1rem 7%">
+      <h2>Kenapa Harus Belanja di TokoKami?</h2>
+      <ul class="keunggulan-list">
+        <li>✔️ Harga terjangkau</li>
+        <li>✔️ Produk berkualitas</li>
+        <li>✔️ Pengiriman cepat</li>
+        <li>✔️ Diskon menarik tiap minggu</li>
+      </ul>
+    </section>
+
     <!-- Tentang Kami -->
     <section id="about" style="padding: 1rem 7%">
       <h2>Tentang Kami</h2>
@@ -183,13 +194,14 @@ Web I
     <section id="contact" style="padding: 1rem 7%; background-color: #f7f7f7">
       <h2>Kontak Kami</h2>
       <form>
-        <label for="nama">Nama:</label><br />
-        <input type="text" id="nama" name="nama" required /><br />
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br />
-        <label for="pesan">Pesan:</label><br />
-        <textarea id="pesan" name="pesan" rows="4" required></textarea><br />
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="4" required></textarea>
         <button type="submit">Kirim</button>
+        <button id="topBtn">&#8679;</button>
       </form>
     </section>
 
@@ -203,11 +215,15 @@ Web I
         <source src="video/promo.mp4" type="video/mp4" />
         Browser Anda tidak mendukung video.
       </video>
+      <a href="video/promo.mp4" target="_blank">Tonton di Tab Baru</a>
     </section>
 
     <section id="daftar-produk" style="padding: 0.5rem 7%">
       <h2>Daftar Produk Populer</h2>
-      <table class="produk-table">
+      <table
+        class="produk-table"
+        style="width: 100%; border-collapse: collapse; margin-top: 0.5rem"
+      >
         <thead>
           <tr>
             <th>Nama Produk</th>
@@ -221,7 +237,6 @@ Web I
             <td>Rp.1.000.000</td>
             <td>12</td>
           </tr>
-
           <tr>
             <td>Kulkas 2 Pintu</td>
             <td>Rp.2.700.000</td>
@@ -241,11 +256,29 @@ Web I
       <h2>Keranjang Belanja</h2>
       <ul id="daftar-keranjang"></ul>
       <p>Total: Rp <span id="total-belanja">0</span></p>
-      <button id="hapus-semua" style="margin-top: 10px">Hapus Semua</button>
+      <button
+        id="hapus-semua"
+        style="
+          margin-top: 1rem;
+          background-color: #f44336;
+          color: white;
+          padding: 0.4rem 0.8rem;
+          border: none;
+          border-radius: 6px;
+          font-weight: 600;
+        "
+      >
+        Hapus Semua
+      </button>
     </section>
 
+    <footer
+      style="text-align: center; padding: 1rem; font-size: 0.9rem; color: #666"
+    >
+      &copy; <span id="year"></span> TokoKami. All rights reserved.
+    </footer>
+
     <!-- Script -->
-    <!-- PASTIKAN DITARUH SEBELUM </body> -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -260,13 +293,14 @@ Web I
         const cartBadge = document.getElementById("cart-badge");
         const cartDropdown = document.getElementById("cart-dropdown");
 
-        const searchButton = document.getElementById("search");
+        const searchButton = document.getElementById("search-btn");
         const searchBar = document.getElementById("search-bar");
         const searchInput = document.getElementById("search-input");
+        const hamburger = document.getElementById("hamburger-menu");
 
         const tombolKeranjang = document.querySelectorAll(".btn-keranjang");
         const clickSound = document.getElementById("click-sound");
-
+        document.getElementById("year").textContent = new Date().getFullYear();
         // === Tambah ke Keranjang ===
         tombolKeranjang.forEach((btn) => {
           btn.addEventListener("click", () => {
@@ -299,9 +333,9 @@ Web I
           keranjang.forEach((item, index) => {
             const li = document.createElement("li");
             li.innerHTML = `
-          ${item.nama} - Rp ${item.harga.toLocaleString()}
-          <button class="hapus-item" data-index="${index}" style="color:red; margin-left:10px;">❌</button>
-        `;
+                        ${item.nama} - Rp ${item.harga.toLocaleString()}
+                        <button class="hapus-item" data-index="${index}" style="color:red; margin-left:10px;">❌</button>
+                    `;
             daftarKeranjang.appendChild(li);
             total += item.harga;
           });
@@ -359,20 +393,46 @@ Web I
         if (cartIcon) {
           cartIcon.addEventListener("click", (e) => {
             e.preventDefault();
-            cartDropdown.style.display =
-              cartDropdown.style.display === "block" ? "none" : "block";
+            e.stopPropagation();
+            const isHidden = cartDropdown.style.display !== "block";
+            // Hide all other dropdowns first
+            document.querySelectorAll(".cart-dropdown").forEach((dd) => {
+              dd.style.display = "none";
+            });
+            cartDropdown.style.display = isHidden ? "block" : "none";
           });
         }
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".shopping-cart-container")) {
+            cartDropdown.style.display = "none";
+          }
+        });
 
         // === Toggle Search
         if (searchButton && searchBar) {
           searchButton.addEventListener("click", (e) => {
             e.preventDefault();
-            searchBar.style.display =
-              searchBar.style.display === "block" ? "none" : "block";
-            searchInput.focus();
+            e.stopPropagation();
+            const isHidden = searchBar.style.display !== "block";
+            document.querySelectorAll("#search-bar").forEach((sb) => {
+              sb.style.display = "none";
+            });
+            searchBar.style.display = isHidden ? "block" : "none";
+            if (isHidden) searchInput.focus();
           });
         }
+
+        // Close search when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            !e.target.closest("#search-bar") &&
+            e.target.id !== "search-btn"
+          ) {
+            searchBar.style.display = "none";
+          }
+        });
 
         // === Fungsi Pencarian Produk
         function jalankanPencarian() {
@@ -383,11 +443,9 @@ Web I
             const namaProduk = card
               .querySelector(".produk-nama")
               .textContent.toLowerCase();
-            if (namaProduk.includes(keyword)) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
+            card.style.display = namaProduk.includes(keyword)
+              ? "block"
+              : "none";
           });
         }
 
@@ -396,19 +454,35 @@ Web I
           searchInput.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
               e.preventDefault();
+              if (searchInput.value.trim() === "") {
+                alert("Silakan masukkan kata kunci pencarian");
+                return;
+              }
               jalankanPencarian();
             }
           });
 
-          searchInput.addEventListener("input", () => {
+          searchInput.addEventListener("input", (e) => {
             if (searchInput.value.trim() === "") {
               document.querySelectorAll(".produk-card").forEach((card) => {
                 card.style.display = "block";
               });
+            } else {
+              jalankanPencarian();
             }
           });
         }
+
+        // Toggle hamburger menu
+        hamburger.addEventListener("click", () => {
+          document.querySelector(".navbar-nav").classList.toggle("show");
+        });
       });
+
+      const btn = document.getElementById("topBtn");
+      window.onscroll = () =>
+        (btn.style.display = window.scrollY > 300 ? "block" : "none");
+      btn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
     </script>
   </body>
 </html>
